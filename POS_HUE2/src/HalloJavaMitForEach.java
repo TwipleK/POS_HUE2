@@ -9,7 +9,7 @@ public class HalloJavaMitForEach {
         for (String s : stringList) System.out.println(s);
 
         stringList.forEach(System.out::println);
-
-
     }
+
+
 }
