@@ -1,8 +1,8 @@
 public class Number {
-    private int a;
-    private int b;
+    private double a;
+    private double b;
 
-    public int getA() {
+    public double getA() {
         return a;
     }
 
@@ -10,7 +10,7 @@ public class Number {
         this.a = a;
     }
 
-    public int getB() {
+    public double getB() {
         return b;
     }
 
