@@ -42,7 +42,7 @@ public class NumberTester {
 
     }
 
-    public void readFile(){
+    private void readFile(){
         Scanner scanner = null;
         try {
             scanner = new Scanner(new File(FILENAME));
@@ -51,6 +51,7 @@ public class NumberTester {
         }
 
         scanner.nextLine();
+
         while(scanner.hasNext()){
             String[] readLine = scanner.nextLine().split(" ");
 
