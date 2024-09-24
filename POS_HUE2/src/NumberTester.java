@@ -32,11 +32,11 @@ public class NumberTester {
         fileMap.forEach((key, value) -> {
             switch (key){
                 case 1:
-                    System.out.println(oddTester.testNumber(value));
+                    System.out.println(oddTester.testNumber(value) ? "EVEN" : "ODD");
                 case 2:
-                    System.out.println(primeTester.testNumber(value));
+                    System.out.println(primeTester.testNumber(value) ? "PRIME" : "NO PRIME");
                 case 3:
-                    System.out.println(palindromeTester.testNumber(value));
+                    System.out.println(palindromeTester.testNumber(value) ? "PALINDROME" : "NO PALINDROME");
             }
         });
 

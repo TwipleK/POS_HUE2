@@ -4,10 +4,15 @@ public class Main {
         numberTester.setPalindromeTester(number -> {
             StringBuilder stringBuilder = new StringBuilder(number);
             stringBuilder.reverse();
-            return stringBuilder.equals(number);
+            return stringBuilder.toString().equals(String.valueOf(number));
         });
+
         numberTester.setOddEvenTester((number) -> number % 2 == 0);
-        numberTester.setPrimeTester();
+
+        numberTester.setPrimeTester((number) ->{
+            EratosthenesPrimeSieve primeTester = new EratosthenesPrimeSieve(number);
+            return primeTester.isPrime(number);
+        });
 
 
     }
