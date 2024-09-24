@@ -1,19 +1,20 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class NumberTester {
         private NumberTest oddTester;
         private NumberTest palindromeTester;
         private NumberTest primeTester;
-        private Map<Integer,Integer> fileMap = new LinkedHashMap<>();
+
+        private List<Map<Integer,Integer>> fileMapList = new ArrayList<>();
+//        private Map<Integer,Integer> fileMap = new LinkedHashMap<>();
 
     private static String FILENAME;
     public NumberTester(String fileName){
         FILENAME = fileName;
+        readFile();
     }
 
     public void setOddEvenTester (NumberTest oddTester){
@@ -29,16 +30,14 @@ public class NumberTester {
     }
 
     public void testFile(){
-        fileMap.forEach((key, value) -> {
+
+        fileMapList.forEach((map) -> map.forEach((key, value) -> {
             switch (key){
-                case 1:
-                    System.out.println(oddTester.testNumber(value) ? "EVEN" : "ODD");
-                case 2:
-                    System.out.println(primeTester.testNumber(value) ? "PRIME" : "NO PRIME");
-                case 3:
-                    System.out.println(palindromeTester.testNumber(value) ? "PALINDROME" : "NO PALINDROME");
+                case 1 -> System.out.println(oddTester.testNumber(value) ? "EVEN" : "ODD");
+                case 2 -> System.out.println(primeTester.testNumber(value) ? "PRIME" : "NO PRIME");
+                case 3 -> System.out.println(palindromeTester.testNumber(value) ? "PALINDROME" : "NO PALINDROME");
             }
-        });
+        }));
 
 
     }
@@ -54,7 +53,10 @@ public class NumberTester {
         scanner.nextLine();
         while(scanner.hasNext()){
             String[] readLine = scanner.nextLine().split(" ");
-            fileMap.put(Integer.parseInt(readLine[0]),Integer.parseInt(readLine[1]));
+
+            HashMap<Integer,Integer> listMap = new HashMap<>();
+            listMap.put(Integer.parseInt(readLine[0]),Integer.parseInt(readLine[1]));
+            fileMapList.add(listMap);
         }
     }
 

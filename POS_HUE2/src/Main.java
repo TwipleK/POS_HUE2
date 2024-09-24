@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         NumberTester numberTester = new NumberTester("testFile.txt");
         numberTester.setPalindromeTester(number -> {
-            StringBuilder stringBuilder = new StringBuilder(number);
+            StringBuilder stringBuilder = new StringBuilder(String.valueOf(number));
             stringBuilder.reverse();
             return stringBuilder.toString().equals(String.valueOf(number));
         });
@@ -14,6 +14,6 @@ public class Main {
             return primeTester.isPrime(number);
         });
 
-
+        numberTester.testFile();
     }
 }
