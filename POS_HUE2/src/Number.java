@@ -6,7 +6,7 @@ public class Number {
         return a;
     }
 
-    public void setA(int a) {
+    public void setA(double a) {
         this.a = a;
     }
 
@@ -14,7 +14,7 @@ public class Number {
         return b;
     }
 
-    public void setB(int b) {
+    public void setB(double b) {
         this.b = b;
     }
 }
